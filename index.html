@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BUSINESS IN CHINA : Votre partenaire B2B en Chine pour achats, logistique et relations fournisseurs. Basé en Chine, nous facilitons vos échanges commerciaux.">
+    <meta name="keywords" content="B2B Chine, achats Chine, fournisseurs chinois, logistique internationale, relations commerciales">
+    <meta name="author" content="BUSINESS IN CHINA">
+    <title>BUSINESS IN CHINA</title>
+    <link rel="icon" href="#" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="" crossorigin="anonymous">
+    <style>
+        :root{
+            --primary:#007bff;
+            --primary-dark:#0056b3;
+            --accent:#ffd700;
+            --bg:#f8f9fa;
+            --text:#333;
+            --card-bg:#fff;
+            --shadow: rgba(0,0,0,0.08);
+            --max-width:1200px;
+            --header-height:72px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; scroll-behavior: auto; }
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            background: var(--bg);
+            overflow-x: hidden;
+            padding-top: var(--header-height);
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
+        a { color: inherit; }
+
+        .visually-hidden {
+            position: absolute !important;
+            height: 1px; width: 1px;
+            overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+            white-space: nowrap; border: 0; padding: 0; margin: -1px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 12px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            z-index: 1000;
+            box-shadow: 0 2px 10px var(--shadow);
+            display: flex;
+            align-items: center;
+        }
+        .header-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .brand {
+            display:flex;
+            align-items:center;
+            gap:10px;
+            text-decoration: none;
+            color: white;
+        }
+        .brand h1 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight:700;
+            letter-spacing:0.4px;
+        }
+
+        nav {
+            display:flex;
+            align-items:center;
+            gap: 8px;
+        }
+        nav ul {
+            list-style:none;
+            margin:0;
+            padding:0;
+            display:flex;
+            gap:14px;
+            align-items:center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight:500;
+            padding:8px 6px;
+            border-radius:4px;
+        }
+        nav a:focus, nav a:hover {
+            outline: none;
+            background: rgba(255,255,255,0.08);
+            color: var(--accent);
+        }
+
+        .hamburger-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 6px;
+        }
+        .hamburger-btn:focus { outline: 2px solid rgba(255,255,255,0.6); }
+
+        .hamburger-btn .bar {
+            width: 22px;
+            height: 2px;
+            background: white;
+            margin: 4px 0;
+            transition: transform .25s ease;
+        }
+
+        main { max-width: var(--max-width); margin: 0 auto; padding: 20px; box-sizing: border-box; }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1200x600?text=Chine+Business+Landscape');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px 80px;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; inset:0;
+            background: rgba(0,0,0,0.45);
+        }
+        .hero-content { position: relative; z-index:1; max-width:900px; margin:0 auto; }
+        .hero h2 { margin:0 0 12px; font-size:2.2rem; animation: fadeInUp 800ms ease-out; }
+        .hero p { margin:0 0 20px; font-size:1.05rem; }
+
+        .teasers {
+            display:flex;
+            gap:14px;
+            justify-content:center;
+            align-items:center;
+            margin: 20px 0;
+            flex-wrap:wrap;
+            padding: 12px;
+        }
+        .teaser-item {
+            background: linear-gradient(180deg, rgba(255,255,255,0.98), var(--card-bg));
+            border-radius: 10px;
+            padding: 12px 16px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            display:flex;
+            gap:10px;
+            align-items:center;
+            min-width:220px;
+            max-width:320px;
+            transition: transform .18s ease, box-shadow .18s ease;
+        }
+        .teaser-item:hover, .teaser-item:focus-within { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,0.10); }
+        .teaser-item i { color: var(--primary); font-size:1.4rem; }
+        .teaser-item .txt { font-size:0.95rem; }
+        .teaser-item .txt strong { display:block; font-weight:700; color:var(--primary-dark); }
+
+        .btn {
+            background: var(--accent);
+            color: #222;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight:700;
+            display:inline-block;
+        }
+        .btn:hover, .btn:focus { background: #ffea7a; }
+
+        section { padding: 40px 0; }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .service {
+            background: var(--card-bg);
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px var(--shadow);
+            text-align: center;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .service:focus-within, .service:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+        .service i { font-size: 2.2rem; color: var(--primary); margin-bottom: 10px; display:block; }
+        .service h3 { margin: 10px 0; font-size: 1.1rem; }
+
+        .testimonials { background: #e9ecef; padding: 40px 20px; border-radius: 10px; }
+        .testimonial { background: white; padding: 16px; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.06); }
+
+        .contact { background: white; padding: 28px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); max-width:700px; margin: 0 auto; }
+        .contact label { display:block; margin-bottom:6px; font-weight:500; }
+        .contact input, .contact textarea {
+            width: 100%; padding: 12px; margin-bottom: 14px; border: 1px solid #ddd; border-radius:6px; box-sizing:border-box;
+        }
+        .contact input:focus, .contact textarea:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(0,123,255,0.06); }
+
+        .feedback { min-height: 1.25rem; margin-bottom:8px; font-size:0.95rem; }
+        .feedback.error { color: #c82333; }
+        .feedback.success { color: #155724; }
+
+        footer {
+            background: #333; color: white; text-align:center; padding: 28px 20px; margin-top: 30px; border-radius: 6px;
+        }
+        footer a { color: var(--accent); text-decoration:none; }
+
+        @keyframes fadeInUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
+
+        /* responsive */
+        @media (max-width: 880px) {
+            .hamburger-btn { display:block; }
+            nav { position: absolute; top: calc(var(--header-height) + 8px); right: 16px; background: var(--primary); border-radius:8px; padding:10px; display:none; flex-direction:column; min-width:180px; }
+            nav[aria-hidden="false"] { display:flex; }
+            nav ul { flex-direction: column; gap:6px; }
+            .hero { padding: 100px 16px 60px; border-radius: 0; }
+            .teasers { padding: 10px; gap:10px; }
+            .teaser-item { min-width: 160px; max-width: 100%; }
+        }
+
+        /* anchor offset for fixed header */
+        section[id] { scroll-margin-top: calc(var(--header-height) + 12px); }
+
+        /* New styles for company presentation */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 20px;
+            align-items: start;
+        }
+        .mission, .values, .process, .team, .clients, .case-studies {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+        }
+        .process-steps {
+            display:flex;
+            gap:12px;
+            flex-wrap:wrap;
+        }
+        .step {
+            flex: 1 1 160px;
+            background: linear-gradient(180deg,#fff,#f7f9fb);
+            padding: 12px;
+            border-radius:8px;
+            text-align:center;
+        }
+        .team-grid {
+            display:grid;
+            grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+            gap:12px;
+        }
+        .member {
+            text-align:center;
+            padding:12px;
+            border-radius:8px;
+            background:#fff;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+        }
+        .client-logos {
+            display:flex;
+            gap:12px;
+            flex-wrap:wrap;
+            align-items:center;
+        }
+        .case {
+            margin-bottom:12px;
+            background:#fff;
+            padding:12px;
+            border-radius:8px;
+        }
+
+        @media (max-width: 920px) {
+            .about-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <a class="visually-hidden" href="#main">Aller au contenu</a>
+
+    <header role="banner">
+        <div class="header-content">
+            <a href="#about" class="brand" aria-label="Business in China - accueil">
+                <img src="images/fais moi un vrai logo professionnel sans background _ Business in China_.jpg" alt="Logo BUSINESS IN CHINA" height="36" style="width:auto; border-radius:6px; object-fit:contain;">
+                <h1 style="font-family: 'Roboto', sans-serif; font-weight:700; margin:0; font-size:1.1rem; letter-spacing:0.4px;">BUSINESS IN CHINA</h1>
+            </a>
+
+            <button class="hamburger-btn" id="hamburger" aria-controls="primary-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
+
+            <nav id="primary-nav" aria-hidden="true">
+                <ul>
+                    <li><a href="#about">Accueil</a></li>
+                    <li><a href="#mission">Mission & Vision</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Processus</a></li>
+                    <li><a href="#testimonials">Témoignages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" role="main">
+        <section class="hero" id="about" role="region" aria-label="Présentation" style="position: relative; overflow: hidden; background-image: url('shutterstock_503657620-3-1024x683.jpg'); background-size: cover; background-position: center;">
+            <div class="hero-content" role="article" aria-labelledby="hero-title">
+                <h2 id="hero-title">Votre Partenaire en Chine</h2>
+                <p>Depuis 2024, BUSINESS IN CHINA accompagne les entreprises européennes et francophones dans leurs démarches d'approvisionnement, d'audit fournisseur et de logistique internationale. Nos équipes basées en Chine combinent savoir-faire local et standards européens pour sécuriser vos opérations.</p>
+                <a href="#services" class="btn">Découvrez nos services</a>
+            </div>
+        </section>
+
+        <!-- Présentation améliorée : histoire, promesse, chiffres clés -->
+        <section id="company-overview" aria-labelledby="company-overview-title" style="padding-top:18px;">
+            <div class="about-grid" role="region" aria-labelledby="company-overview-title">
+            <div>
+
+                <p><strong>Depuis 2024</strong>, BUSINESS IN CHINA accompagne les entreprises européennes et francophones dans leurs opérations d'approvisionnement en Chine. Nous couvrons le B2B et le B2C, du sourcing initial au contrôle qualité et à la logistique jusqu'à la livraison finale.</p>
+
+                <h3>Ce que nous proposons</h3>
+                <ul>
+                <li><strong>Gestion commerciale B2C/B2B :</strong> suivi clients, coordination commerciale et fidélisation.</li>
+                <li><strong>Relation fournisseurs :</strong> recherche, évaluation, négociation et audits usine.</li>
+                <li><strong>Présence locale :</strong> représentation terrain, inspections et suivi de production.</li>
+                <li><strong>Médiation culturelle :</strong> accompagnement linguistique et conseils en négociation.</li>
+                </ul>
+
+                <h3>Pourquoi nous choisir ?</h3>
+                <ul>
+                    <li><strong>Présence locale et réactivité :</strong> visites d'usine, interventions rapides et résolution des problèmes.</li>
+                    <li><strong>Réseau fiable :</strong> fournisseurs vérifiés et partenaires logistiques éprouvés.</li>
+                    <li><strong>Communication multilingue :</strong> français, chinois et anglais pour supprimer les barrières linguistiques.</li>
+                    <li><strong>Transparence :</strong> rapports détaillés avec photos et mises à jour régulières.</li>
+                    <li><strong>Réduction des coûts :</strong> négociations optimisées et élimination des intermédiaires inutiles.</li>
+                    <li><strong>Sécurité juridique :</strong> contrats sécurisés et conformité aux normes internationales.</li>
+                </ul>
+
+                <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;align-items:center;">
+                <a class="btn" href="#contact" aria-label="Contactez BUSINESS IN CHINA">Contactez-nous</a>
+                <div style="display:flex;gap:10px;align-items:center;">
+                    <div style="text-align:center;">
+                    <div style="font-weight:700;font-size:1.1rem;color:var(--primary);">2+</div>
+                    <div style="font-size:0.85rem;color:#666;">ans d'expérience</div>
+                    </div>
+                    <div style="text-align:center;">
+                    <div style="font-weight:700;font-size:1.1rem;color:var(--primary);">50+</div>
+                    <div style="font-size:0.85rem;color:#666;">projets accompagnés</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <aside aria-hidden="false">
+                <figure style="margin:0;">
+                <img src="images/images (2).jpg" alt="Équipe Business In China sur le terrain en Chine" style="width:100%; border-radius:8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                </figure>
+            </aside>
+            </div>
+        </section>
+
+        <section id="mission" aria-labelledby="mission-title">
+            <h2 id="mission-title" style="text-align:center; margin-bottom:20px;">Mission & Vision</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+                <div class="mission">
+                    <h4>Notre mission</h4>
+                    <p>Faciliter l'accès aux marchés asiatiques en offrant des services B2B complets : sourcing responsable, audits qualité et logistique sûre pour garantir des importations fiables et compétitives. Nous nous engageons également à soutenir les entreprises B2C en leur fournissant des solutions adaptées à leurs besoins spécifiques.</p>
+                </div>
+                <div class="values">
+                    <h4>Notre vision</h4>
+                    <p>Devenir le partenaire de référence des entreprises Africaines et européennes souhaitant externaliser leurs achats en Chine, en combinant expertise locale et exigences internationales. Nous aspirons à renforcer les relations B2C en assurant une expérience client fluide et efficace.</p>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section id="services" aria-labelledby="services-title">
+            <h2 id="services-title" style="text-align:center; margin-bottom:20px;">Nos Services</h2>
+            <div class="services" role="list">
+                <article class="service" role="listitem" aria-labelledby="svc-1" tabindex="0">
+                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                    <h3 id="svc-1">Achats &amp; Sourcing</h3>
+                    <p>Recherche fournisseurs, évaluation, négociation et suivi de production pour garantir conformité et prix compétitifs.</p>
+                    <a class="btn" href="#contact" aria-label="Contactez-nous pour Achats">En savoir plus</a>
+                </article>
+
+                <article class="service" role="listitem" aria-labelledby="svc-2" tabindex="0">
+                    <i class="fas fa-truck" aria-hidden="true"></i>
+                    <h3 id="svc-2">Logistique &amp; Transport</h3>
+                    <p>Solutions FCL/LCL, dédouanement, assurance et optimisation de chaîne d'approvisionnement pour réduire les délais.</p>
+                    <a class="btn" href="#contact" aria-label="Contactez-nous pour Logistique">Obtenir un devis</a>
+                </article>
+
+                <article class="service" role="listitem" aria-labelledby="svc-3" tabindex="0">
+                    <i class="fas fa-handshake" aria-hidden="true"></i>
+                    <h3 id="svc-3">Relations B2C/B2B</h3>
+                    <p>Mise en relation, développement commercial et accompagnement pour établir des partenariats durables.</p>
+                    <a class="btn" href="#contact" aria-label="Contactez-nous pour B2B">Commencer</a>
+                </article>
+
+                <article class="service" role="listitem" aria-labelledby="svc-4" tabindex="0">
+                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                    <h3 id="svc-4">Contrôle Qualité</h3>
+                    <p>Inspections pré-expédition, tests et rapports détaillés pour minimiser les non-conformités.</p>
+                    <a class="btn" href="#contact" aria-label="Contactez-nous pour Contrôle Qualité">Demandez une inspection</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="process" aria-labelledby="process-title">
+            <h2 id="process-title" style="text-align:center; margin-bottom:20px;">Notre processus en 5 étapes</h2>
+            <div class="process">
+                <div class="process-steps" role="list">
+                    <div class="step" role="listitem">
+                        <i class="fas fa-search" style="color:var(--primary);font-size:20px;"></i>
+                        <strong>1. Analyse</strong>
+                        <p>Compréhension du besoin et définition du cahier des charges.</p>
+                    </div>
+                    <div class="step" role="listitem">
+                        <i class="fas fa-handshake" style="color:var(--primary);font-size:20px;"></i>
+                        <strong>2. Sourcing</strong>
+                        <p>Sélection et négociation avec fournisseurs qualifiés.</p>
+                    </div>
+                    <div class="step" role="listitem">
+                        <i class="fas fa-cogs" style="color:var(--primary);font-size:20px;"></i>
+                        <strong>3. Production</strong>
+                        <p>Suivi de production et vérifications en cours de fabrication.</p>
+                    </div>
+                    <div class="step" role="listitem">
+                        <i class="fas fa-clipboard-check" style="color:var(--primary);font-size:20px;"></i>
+                        <strong>4. Contrôle</strong>
+                        <p>Inspections avant expédition et tests qualité.</p>
+                    </div>
+                    <div class="step" role="listitem">
+                        <i class="fas fa-plane" style="color:var(--primary);font-size:20px;"></i>
+                        <strong>5. Livraison</strong>
+                        <p>Gestion logistique et suivi jusqu'à réception chez le client.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+  
+
+      
+
+        <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
+            <h2 id="testimonials-title" style="text-align:center; margin-bottom:20px;">Témoignages Clients</h2>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px; align-items:start;">
+
+                <article class="testimonial" role="article" style="display:flex; gap:12px; align-items:flex-start;">
+                    <figure style="margin:0; flex:0 0 84px;">
+                        <img src="images/images (3).jpg" alt="Portrait de Jean Dupont" loading="lazy"
+                             style="width:84px; height:84px; border-radius:50%; object-fit:cover; box-shadow:0 6px 14px rgba(0,0,0,0.08);" />
+                    </figure>
+                    <div>
+                        <p style="margin:0 0 8px;">"BUSINESS IN CHINA a transformé nos achats en Chine. Leur suivi logistique est impeccable !" </p>
+                        <p style="margin:0; font-weight:700; color:var(--primary);">Jean Claude — CEO, TechFrance</p>
+                    </div>
+                </article>
+
+                <article class="testimonial" role="article" style="display:flex; gap:12px; align-items:flex-start;">
+                    <figure style="margin:0; flex:0 0 84px;">
+                        <img src="images/e.jpg" alt="Portrait de Marie Chen" loading="lazy"
+                             style="width:84px; height:84px; border-radius:50%; object-fit:cover; box-shadow:0 6px 14px rgba(0,0,0,0.08);" />
+                    </figure>
+                    <div>
+                        <p style="margin:0 0 8px;">"Excellente gestion des relations B2B. Nous avons trouvé des fournisseurs de qualité grâce à eux."</p>
+                        <p style="margin:0; font-weight:700; color:var(--primary);">Marie Chen — Directrice Export</p>
+                    </div>
+                </article>
+
+                <article class="testimonial" role="article" style="display:flex; gap:12px; align-items:flex-start;">
+                    <figure style="margin:0; flex:0 0 84px;">
+                        <img src="images/download.jpg" alt="Photo d'équipe lors d'une inspection" loading="lazy"
+                             style="width:84px; height:84px; border-radius:8px; object-fit:cover; box-shadow:0 6px 14px rgba(0,0,0,0.08);" />
+                    </figure>
+                    <div>
+                        <p style="margin:0 0 8px;">"Intervention locale rapide et rapports détaillés après chaque inspection — très rassurant pour notre supply chain."</p>
+                        <p style="margin:0; font-weight:700; color:var(--primary);">Achats — Client industriel</p>
+                    </div>
+                </article>
+
+            </div>
+
+            <div style="margin-top:16px; text-align:center;">
+                <p style="margin:0 0 10px; color:#666;">Quelques clients & partenaires</p>
+                <div class="client-logos" style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; align-items:center;">
+                    <img src="images/canevas-logo.png" alt="Logo Client A" loading="lazy" style="height:46px; object-fit:contain; filter:grayscale(0.2);" />
+                    <img src="images/logo.png" alt="Logo Client B" loading="lazy" style="height:46px; object-fit:contain; filter:grayscale(0.2);" />
+                    <img src="images/canevas-logo.png" alt="Logo Client C" loading="lazy" style="height:46px; object-fit:contain; filter:grayscale(0.2);" />
+                    <img src="images/logo.png" alt="Logo Client D" loading="lazy" style="height:46px; object-fit:contain; filter:grayscale(0.2);" />
+                </div>
+            </div>
+        </section>
+
+     
+    </main>
+
+    <footer role="contentinfo">
+        <div style="max-width:1200px;margin:0 auto;padding:20px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+            <p style="margin:0;font-weight:700;color:var(--card-bg);">BUSINESS IN CHINA — Bureau de représentation</p>
+            <p style="margin:0;">Ville : Shanghai, Chine</p>
+            <p style="margin:0;">Contact : <a href="tel:+8613800000000" aria-label="Téléphone Shanghai">+86 138 0000 0000</a> • <a href="mailto:contact@businessinchina.com" aria-label="Email de contact">contact@businessinchina.com</a></p>
+            <p style="margin:6px 0 0 0;">&copy; 2024 BUSINESS IN CHINA. Tous droits réservés.</p>
+            <p style="margin:0;">
+                <a href="#" aria-label="Politique de confidentialité">Politique de confidentialité</a> |
+                <a href="#" aria-label="Conditions d'utilisation">BY JSS GROUP</a>
+            </p>
+            <p style="margin:6px 0 0 0;">Suivez-nous :
+                <a href="#" aria-label="LinkedIn" style="margin-left:8px;"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter" style="margin-left:8px;"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook" style="margin-left:8px;"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Accessible mobile nav toggle
+        (function() {
+            const btn = document.getElementById('hamburger');
+            const nav = document.getElementById('primary-nav');
+
+            function setExpanded(expanded) {
+                btn.setAttribute('aria-expanded', String(expanded));
+                nav.setAttribute('aria-hidden', String(!expanded));
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                setExpanded(!expanded);
+            });
+
+            // close nav when a link is clicked (mobile)
+            nav.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => setExpanded(false));
+            });
+
+            // keyboard support: Enter/Space toggle
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); btn.click(); }
+            });
+        })();
+
+        // Simple form validation + feedback (client-side)
+        (function() {
+            const form = document.getElementById('contactForm');
+            const feedback = document.getElementById('feedback');
+
+            function showMessage(msg, type) {
+                feedback.textContent = msg;
+                feedback.className = 'feedback ' + (type === 'error' ? 'error' : (type === 'success' ? 'success' : ''));
+            }
+
+            function validateEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+
+            form.addEventListener('input', (e) => {
+                const name = form.name.value.trim();
+                const email = form.email.value.trim();
+                const message = form.message.value.trim();
+
+                if (!name || !email || !message) {
+                    showMessage('', ''); // clear while typing
+                    return;
+                }
+
+                if (!validateEmail(email)) {
+                    showMessage('Format d\'email invalide.', 'error');
+                    return;
+                }
+
+                showMessage('', '');
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = form.name.value.trim();
+                const email = form.email.value.trim();
+                const message = form.message.value.trim();
+
+                if (!name || !email || !message) {
+                    showMessage('Tous les champs obligatoires doivent être remplis.', 'error');
+                    return;
+                }
+                if (!validateEmail(email)) {
+                    showMessage('Veuillez saisir un email valide.', 'error');
+                    return;
+                }
+
+                // simulate send
+                showMessage('Envoi en cours...', '');
+                setTimeout(() => {
+                    showMessage('Message envoyé avec succès ! Nous vous répondrons bientôt.', 'success');
+                    form.reset();
+                }, 700);
+
+                // For real send:
+                // fetch('/api/contact', { method: 'POST', body: new FormData(form) })
+                //   .then(r => r.ok ? showMessage('Message envoyé', 'success') : showMessage('Erreur...', 'error'));
+            });
+        })();
+
+        // Simple reveal on scroll (lightweight)
+        (function() {
+            const elems = document.querySelectorAll('.service, .testimonial, .hero-content, .teaser-item, .mission, .values, .process, .team, .case-studies');
+            const onScroll = () => {
+                const winH = window.innerHeight;
+                elems.forEach(el => {
+                    const r = el.getBoundingClientRect();
+                    if (r.top < winH - 60) {
+                        el.style.animation = 'fadeInUp 600ms ease-out';
+                    }
+                });
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('load', onScroll);
+        })();
+    </script>
+</body>
+</html>
