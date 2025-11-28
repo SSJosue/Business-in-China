@@ -117,7 +117,7 @@
 
         .hamburger-btn {
             display: none;
-            background: transparent;
+            background: white;
             border: none;
             color: white;
             cursor: pointer;
@@ -307,7 +307,7 @@
 
     <header role="banner">
         <div class="header-content">
-            <a href="#about" class="brand" aria-label="Business in China - accueil">
+            <a href="#about" class="brand" aria-label="Business in China - accueil</a>">
                 <img src="fais moi un vrai logo professionnel sans background _ Business in China_.jpg" alt="Logo BUSINESS IN CHINA" height="36" style="width:auto; border-radius:6px; object-fit:contain;">
                 <h1 style="font-family: 'Roboto', sans-serif; font-weight:700; margin:0; font-size:1.1rem; letter-spacing:0.4px;">BUSINESS IN CHINA</h1>
             </a>
@@ -401,7 +401,52 @@
                 </div>
             </div>
         </section>
+        <style>
+        /* WhatsApp floating button */
+        #whatsapp-btn {
+            position: fixed;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #25D366;
+            color: #fff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+            z-index: 2200;
+            text-decoration: none;
+            transition: transform .18s ease, box-shadow .18s ease;
+        }
+        #whatsapp-btn:focus,
+        #whatsapp-btn:hover {
+            transform: translateY(-50%) scale(1.06);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+            outline: none;
+        }
+        #whatsapp-btn i { font-size: 22px; }
 
+        /* Keep button bottom-right on small screens (avoid centered overlay) */
+        @media (max-width: 720px) {
+            #whatsapp-btn {
+                top: auto;
+                bottom: 18px;
+                right: 16px;
+                transform: none;
+            }
+        }
+        </style>
+
+        <a id="whatsapp-btn"
+             href="https://wa.me/8613501658242?text=Bonjour%20BUSINESS%20IN%20CHINA%2C%20je%20souhaite%20être%20contacté%20pour%20mes%20achats%20en%20Chine."
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Contacter BUSINESS IN CHINA via WhatsApp">
+            <span class="visually-hidden">Contacter BUSINESS IN CHINA via WhatsApp</span>
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
         
 
         <section id="services" aria-labelledby="services-title">
@@ -411,28 +456,28 @@
                     <i class="fas fa-shopping-cart" aria-hidden="true"></i>
                     <h3 id="svc-1">Achats &amp; Sourcing</h3>
                     <p>Recherche fournisseurs, évaluation, négociation et suivi de production pour garantir conformité et prix compétitifs.</p>
-                    <a class="btn" href="contact.html" aria-label="Contactez-nous pour Achats">En savoir plus</a>
+                    <a class="btn" href="#contact" aria-label="Contactez-nous pour Achats">En savoir plus</a>
                 </article>
 
                 <article class="service" role="listitem" aria-labelledby="svc-2" tabindex="0">
                     <i class="fas fa-truck" aria-hidden="true"></i>
                     <h3 id="svc-2">Logistique &amp; Transport</h3>
                     <p>Solutions FCL/LCL, dédouanement, assurance et optimisation de chaîne d'approvisionnement pour réduire les délais.</p>
-                    <a class="btn" href="contact.html" aria-label="Contactez-nous pour Logistique">Obtenir un devis</a>
+                    <a class="btn" href="#contact" aria-label="Contactez-nous pour Logistique">Obtenir un devis</a>
                 </article>
 
                 <article class="service" role="listitem" aria-labelledby="svc-3" tabindex="0">
                     <i class="fas fa-handshake" aria-hidden="true"></i>
                     <h3 id="svc-3">Relations B2C/B2B</h3>
                     <p>Mise en relation, développement commercial et accompagnement pour établir des partenariats durables.</p>
-                    <a class="btn" href="contact.html" aria-label="Contactez-nous pour B2B">Commencer</a>
+                    <a class="btn" href="#contact" aria-label="Contactez-nous pour B2B">Commencer</a>
                 </article>
 
                 <article class="service" role="listitem" aria-labelledby="svc-4" tabindex="0">
                     <i class="fas fa-check-circle" aria-hidden="true"></i>
                     <h3 id="svc-4">Contrôle Qualité</h3>
                     <p>Inspections pré-expédition, tests et rapports détaillés pour minimiser les non-conformités.</p>
-                    <a class="btn" href="contact.html" aria-label="Contactez-nous pour Contrôle Qualité">Demandez une inspection</a>
+                    <a class="btn" href="#contact" aria-label="Contactez-nous pour Contrôle Qualité">Demandez une inspection</a>
                 </article>
             </div>
         </section>
@@ -650,7 +695,4 @@
         })();
     </script>
 </body>
-
 </html>
-
-
